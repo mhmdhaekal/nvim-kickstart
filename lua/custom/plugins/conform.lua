@@ -15,7 +15,7 @@ return {
   opts = {
     notify_on_error = false,
     formatters_by_ft = {
-      astro = {'biome'},
+      astro = { 'biome' },
       lua = { 'stylua' },
       javascript = { 'eslint_d' },
       typescript = { 'biome' },
