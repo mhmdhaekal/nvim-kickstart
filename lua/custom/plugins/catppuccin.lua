@@ -7,7 +7,6 @@ return {
       flavour = 'macchiato',
       transparent_background = true,
       integrations = {
-        neotree = true,
         snacks = true,
       }
     }

@@ -10,6 +10,10 @@ vim.opt.shiftwidth = 4
 vim.opt.colorcolumn = '120'
 vim.opt.textwidth = 120
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
@@ -46,6 +50,7 @@ vim.opt.scrolloff = 10
 
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -435,9 +440,12 @@ require('lazy').setup({
 
       local statusline = require 'mini.statusline'
       local tabline = require 'mini.tabline'
+      local file = require 'mini.files'
+
 
       statusline.setup { use_icons = vim.g.have_nerd_font }
       tabline.setup { use_icons = vim.g.have_nerd_font }
+      file.setup { use_icons = vim.g.have_nerd_font }
 
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
@@ -462,8 +470,6 @@ require('lazy').setup({
       indent = { enable = true, disable = { 'ruby' } },
     },
   },
-
-  require 'kickstart.plugins.neo-tree',
 
   { import = 'custom.plugins' },
 }, {
