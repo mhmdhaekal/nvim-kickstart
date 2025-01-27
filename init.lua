@@ -452,8 +452,8 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-
       require('mini.comment').setup()
+      require('mini.cursorword').setup()
     end,
   },
   {

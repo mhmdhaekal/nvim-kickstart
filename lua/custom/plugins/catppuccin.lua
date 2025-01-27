@@ -8,6 +8,7 @@ return {
       transparent_background = true,
       integrations = {
         snacks = true,
+        mini = true
       }
     }
   end,
