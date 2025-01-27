@@ -430,7 +430,8 @@ require('lazy').setup({
     config = function()
       require('mini.ai').setup { n_lines = 500 }
       require('mini.surround').setup()
-      require('mini.comment').setup()
+      require('mini.pairs').setup()
+
 
       local statusline = require 'mini.statusline'
       local tabline = require 'mini.tabline'
@@ -442,6 +443,9 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+
+      require('mini.comment').setup()
     end,
   },
   {
@@ -459,7 +463,6 @@ require('lazy').setup({
     },
   },
 
-  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
 
   { import = 'custom.plugins' },
