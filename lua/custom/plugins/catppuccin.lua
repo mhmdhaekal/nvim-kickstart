@@ -8,7 +8,8 @@ return {
       transparent_background = true,
       integrations = {
         snacks = true,
-        mini = true
+        mini = true,
+        blink_cmp = true
       }
     }
   end,

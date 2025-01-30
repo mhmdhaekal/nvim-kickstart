@@ -16,6 +16,12 @@ return {
         nerd_font_variant = 'mono'
       },
 
+      completion = {},
+
+      signature = {
+        enabled = true,
+      },
+
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
