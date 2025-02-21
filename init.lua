@@ -40,17 +40,10 @@ vim.opt.inccommand = 'split'
 
 vim.opt.cursorline = true
 
-vim.diagnostic.config({
-  virtual_lines = {
-    current_line = true
-  },
-})
-
 vim.opt.scrolloff = 10
 
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('n', '<leader>e', '<cmd>lua MiniFiles.open()<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -257,7 +250,6 @@ require('lazy').setup({
 
       local servers = {
         gopls = {},
-        pyright = {},
         rust_analyzer = {},
         ts_ls = {
           init_options = {
@@ -289,13 +281,27 @@ require('lazy').setup({
             },
           },
         },
-        ruff = {},
         biome = {},
         eslint = {},
         tailwindcss = {},
         astro = {},
         templ = {},
-        zls = {}
+        zls = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                flake8 = {
+                  enabled = true
+                },
+                pycodestyle = {
+                  enabled = true,
+                  maxLineLength = 120,
+                }
+              }
+            }
+          }
+        }
       }
 
       local lspconfig = require("lspconfig")
@@ -328,15 +334,8 @@ require('lazy').setup({
       require('mini.surround').setup()
       require('mini.pairs').setup()
 
-
       local statusline = require 'mini.statusline'
-      local tabline = require 'mini.tabline'
-      local file = require 'mini.files'
-
-
       statusline.setup { use_icons = vim.g.have_nerd_font }
-      tabline.setup { use_icons = vim.g.have_nerd_font }
-      file.setup { use_icons = vim.g.have_nerd_font }
 
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
@@ -362,6 +361,7 @@ require('lazy').setup({
     },
   },
 
+  require 'kickstart.plugins.neo-tree',
   { import = 'custom.plugins' },
 }, {
   ui = {
