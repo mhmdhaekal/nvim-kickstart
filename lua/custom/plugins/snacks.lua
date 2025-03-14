@@ -37,6 +37,7 @@ return {
       desc = 'Toggle Terminal',
     },
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+    { "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Delete Buffer" },
 
   },
 }
