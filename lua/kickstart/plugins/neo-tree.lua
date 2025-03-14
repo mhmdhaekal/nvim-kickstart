@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal right toggle<CR>', { desc = 'Neotree' })
+vim.keymap.set('n', '<leader>e', ':Neotree position=current<CR>', { desc = 'Neotree' })
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
