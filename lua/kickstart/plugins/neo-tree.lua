@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', { desc = 'Neotree' })
+vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal right toggle<CR>', { desc = 'Neotree' })
 vim.keymap.set('n', '<leader>b', ':Neotree buffers<CR>', { desc = 'Neotree buffer' })
 
 return {
