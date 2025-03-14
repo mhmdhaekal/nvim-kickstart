@@ -215,23 +215,10 @@ require('lazy').setup({
         astro = {},
         templ = {},
         zls = {},
-        pylsp = {
-          settings = {
-            pylsp = {
-              plugins = {
-                flake8 = {
-                  enabled = true
-                },
-                pycodestyle = {
-                  enabled = true,
-                  maxLineLength = 120,
-                }
-              }
-            }
-          }
-        },
         sqls = {},
-        clangd = {}
+        clangd = {},
+        ruff = {},
+        basedpyright = {}
       }
 
       local lspconfig = require("lspconfig")

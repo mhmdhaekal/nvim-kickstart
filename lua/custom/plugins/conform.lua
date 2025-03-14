@@ -21,7 +21,7 @@ return {
       typescript = { 'biome' },
       vue = { 'biome' },
       rust = { 'rustfmt' },
-      python = { 'mypy' }
+      python = { 'ruff' }
     },
   },
 }
