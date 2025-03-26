@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.tabstop = 4
@@ -17,6 +17,8 @@ vim.opt.termguicolors = true
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+
+vim.diagnostic.config({ virtual_lines = true })
 
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -209,7 +211,6 @@ require('lazy').setup({
             },
           },
         },
-        biome = {},
         eslint = {},
         tailwindcss = {},
         astro = {},
@@ -218,7 +219,15 @@ require('lazy').setup({
         sqls = {},
         clangd = {},
         ruff = {},
-        basedpyright = {}
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'off'
+              }
+            }
+          }
+        }
       }
 
       local lspconfig = require("lspconfig")

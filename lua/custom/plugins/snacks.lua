@@ -13,6 +13,8 @@ return {
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    lazygit = { enabled = false },
+    terminal = {enabled = false}
   },
   keys = {
     {
@@ -22,21 +24,7 @@ return {
       end,
       desc = 'Toggle Zen Mode',
     },
-    {
-      '<leader>lg',
-      function()
-        Snacks.lazygit()
-      end,
-      desc = 'Lazygit',
-    },
-    {
-      '<c-/>',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Toggle Terminal',
-    },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+    { "<leader>bd", function() Snacks.bufdelete() end,     desc = "Delete Buffer" },
     { "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Delete Buffer" },
 
   },
