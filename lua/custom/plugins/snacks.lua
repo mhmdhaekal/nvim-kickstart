@@ -3,18 +3,15 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    animate = { enable = true },
-    bigfile = { enabled = true },
-    dashboard = { enabled = false },
     indent = { enabled = true },
     input = { enabled = true },
-    notifier = { enabled = false },
-    quickfile = { enabled = true },
+    notifier = { enabled = true },
+    scope = { enabled = true },
     scroll = { enabled = false },
-    statuscolumn = { enabled = true },
+    statuscolumn = { enabled = false },
     words = { enabled = true },
-    lazygit = { enabled = false },
-    terminal = {enabled = false}
+    bigfile = { enabled = true },
+    quickfile = { enabled = true },
   },
   keys = {
     {
@@ -24,8 +21,5 @@ return {
       end,
       desc = 'Toggle Zen Mode',
     },
-    { "<leader>bd", function() Snacks.bufdelete() end,     desc = "Delete Buffer" },
-    { "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Delete Buffer" },
-
   },
 }
