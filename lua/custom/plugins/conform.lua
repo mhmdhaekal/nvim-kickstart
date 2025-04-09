@@ -21,7 +21,8 @@ return {
       typescript = { 'prettierd' },
       vue = { 'prettierd' },
       rust = { 'rustfmt' },
-      python = { 'ruff' }
+      python = { 'ruff' },
+      sql = {'sqruff'}
     },
   },
 }

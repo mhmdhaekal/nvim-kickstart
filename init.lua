@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.tabstop = 4
@@ -67,6 +67,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -279,7 +281,6 @@ require('lazy').setup({
     },
   },
 
-  require 'kickstart.plugins.neo-tree',
   { import = 'custom.plugins' },
 }, {
   ui = {
@@ -303,8 +304,8 @@ require('lazy').setup({
   },
 })
 
-vim.cmd.colorscheme 'catppuccin'
 vim.opt.termguicolors = true
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+  dofile(vim.g.base46_cache .. v)
+end
