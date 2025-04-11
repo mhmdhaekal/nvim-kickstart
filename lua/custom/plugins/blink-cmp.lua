@@ -2,14 +2,12 @@ return {
   {
     'saghen/blink.cmp',
     dependencies = 'rafamadriz/friendly-snippets',
-
-    -- use a release tag to download pre-built binaries
     version = '*',
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      keymap = { preset = 'super-tab' },
+      keymap = { preset = 'default' },
 
       appearance = {
         use_nvim_cmp_as_default = true,
@@ -19,7 +17,6 @@ return {
       completion = {
         menu = {
           auto_show = true,
-
           draw = {
             columns = {
               { "label",     "label_description", gap = 1 },
@@ -27,13 +24,14 @@ return {
             },
           }
         },
-        documentation = { auto_show = true, auto_show_delay_ms = 500 },
+        documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
 
       signature = {
         enabled = true,
       },
 
+      fuzzy = { implementation = "prefer_rust_with_warning" },
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },

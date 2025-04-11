@@ -6,6 +6,9 @@ return {
     "nvchad/ui",
     config = function()
       require "nvchad"
+      local tbf = require("nvchad.tabufline")
+      vim.keymap.set('n', '<tab>', tbf.next, { desc = '[T]ab [N]ext' })
+      vim.keymap.set('n', '<s-tab>', tbf.prev, { desc = '[T]ab [P]revious' })
     end
   },
   {
