@@ -9,6 +9,10 @@ return {
       local tbf = require("nvchad.tabufline")
       vim.keymap.set('n', '<tab>', tbf.next, { desc = '[T]ab [N]ext' })
       vim.keymap.set('n', '<s-tab>', tbf.prev, { desc = '[T]ab [P]revious' })
+
+      vim.keymap.set({ "n", "t" }, "<A-i>", function()
+        require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
+      end)
     end
   },
   {

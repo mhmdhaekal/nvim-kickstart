@@ -12,6 +12,5 @@ return {
     vim.keymap.set("n", "<leader>sd", ":FzfLua diagnostics_document<CR>", { desc = "Open FzF lua diagnostics_document" })
     vim.keymap.set("n", "<leader>sx", ":FzfLua diagnostics_workspace<CR>",
       { desc = "Open FzF lua diagnostics_workspace" })
-    vim.keymap.set("n", "gd", ":FzfLua lsp_definitions<CR>", { desc = "Open FzF lua diagnostics_workspace" })
   end
 }

@@ -17,6 +17,7 @@ return {
       completion = {
         menu = {
           auto_show = true,
+          border = 'single',
           draw = {
             columns = {
               { "label",     "label_description", gap = 1 },
@@ -24,9 +25,11 @@ return {
             },
           }
         },
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        ghost_text = {
+            enabled = true
+        },
+        documentation = { auto_show = false, auto_show_delay_ms = 500, window = { border = 'single' } },
       },
-
       signature = {
         enabled = true,
       },

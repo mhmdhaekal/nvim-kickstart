@@ -12,6 +12,7 @@ return {
     words = { enabled = true },
     bigfile = { enabled = true },
     quickfile = { enabled = true },
+    dashboard = { example = "doom" }
   },
   keys = {
     {
